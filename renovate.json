@@ -13,19 +13,19 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "all non-major dependencies update",
+      "groupName": "all non-major dependencies update 1",
       "automerge": true
     },
     {
       "matchManagers": ["gomod"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "go modules update ",
+      "groupName": "go modules update 1",
       "automerge": true
     },
     {
       "matchManagers": ["dockerfile"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "docker base images update",
+      "groupName": "docker base images update 1",
       "automerge": true
     }
   ]

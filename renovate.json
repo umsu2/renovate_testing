@@ -15,15 +15,27 @@
   "labels": ["dependencies", "renovate"],
   "packageRules": [
     {
+      "description": "Group all other non-major updates not caught by Go or Docker rules",
       "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "all non-major dependencies",
       "automerge": true,
       "automergeStrategy": "squash"
     },
     {
-      "matchManagers": ["gomod", "dockerfile"],
+      "description": "Separate PR for Go modules",
+      "matchManagers": ["gomod"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "non-major dependencies",
-      "automerge": true
+      "groupName": "go modules",
+      "automerge": true,
+      "automergeStrategy": "squash"
+    },
+    {
+      "description": "Separate PR for Docker base images",
+      "matchManagers": ["dockerfile"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "docker base images",
+      "automerge": true,
+      "automergeStrategy": "squash"
     }
   ],
   "timezone": "UTC"

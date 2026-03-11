@@ -4,8 +4,10 @@
     "config:recommended",
     ":separateMajorReleases",
     ":combinePatchMinorReleases",
-    ":prHourlyLimitNone"
+    ":prHourlyLimitNone",
+    ":enableVulnerabilityAlerts"
   ],
+  "osvVulnerabilityAlerts": true,
   "dependencyDashboard": true,
   "platformAutomerge": true,
   "rebaseWhen": "behind-base-branch",

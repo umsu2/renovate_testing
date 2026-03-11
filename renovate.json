@@ -7,8 +7,6 @@
     ":prHourlyLimitNone"
   ],
   "dependencyDashboard": true,
-  "platformAutomerge": true,
-  "rebaseWhen": "behind-base-branch",
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "labels": ["dependencies", "renovate"],
   "packageRules": [
@@ -20,14 +18,12 @@
     {
       "matchManagers": ["gomod"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "go modules",
-      "automerge": true
+      "groupName": "go modules"
     },
     {
       "matchManagers": ["dockerfile"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "docker base images",
-      "automerge": true
+      "groupName": "docker base images"
     }
   ],
   "timezone": "UTC"

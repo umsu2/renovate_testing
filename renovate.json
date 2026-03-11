@@ -7,7 +7,6 @@
     ":prHourlyLimitNone"
   ],
   "dependencyDashboard": true,
-  "platformAutomerge": true,
   "rebaseWhen": "behind-base-branch",
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "packageRules": [

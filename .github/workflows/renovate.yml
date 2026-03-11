@@ -23,5 +23,4 @@ jobs:
           GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
           RENOVATE_REPOSITORIES: '["${{ github.repository }}"]'
           LOG_LEVEL: "debug"
-          DHI_USERNAME: ${{ secrets.DHI_USERNAME }}
-          DHI_PASSWORD: ${{ secrets.DHI_PASSWORD }}
+          RENOVATE_SECRETS: '{"DHI_USERNAME":"${{ secrets.DHI_USERNAME }}","DHI_PASSWORD":"${{ secrets.DHI_PASSWORD }}"}'

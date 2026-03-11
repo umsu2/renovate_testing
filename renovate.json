@@ -7,9 +7,8 @@
     ":prHourlyLimitNone"
   ],
   "dependencyDashboard": true,
-  "platformAutomerge": true,
-  "rebaseWhen": "behind-base-branch",
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+  "labels": ["dependencies", "renovate"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
@@ -26,5 +25,6 @@
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "docker base images"
     }
-  ]
+  ],
+  "timezone": "UTC"
 }

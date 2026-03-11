@@ -11,32 +11,23 @@
   "rebaseWhen": "behind-base-branch",
   "automergeType": "pr",
   "prConcurrentLimit": 0,
-  "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
-  "labels": ["dependencies", "renovate"],
   "packageRules": [
     {
-      "description": "Group all other non-major updates not caught by Go or Docker rules",
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "all non-major dependencies",
-      "automerge": true,
-      "automergeStrategy": "squash"
-    },
-    {
-      "description": "Separate PR for Go modules",
       "matchManagers": ["gomod"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "go modules",
-      "automerge": true,
-      "automergeStrategy": "squash"
+      "automerge": true
     },
     {
-      "description": "Separate PR for Docker base images",
       "matchManagers": ["dockerfile"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "docker base images",
-      "automerge": true,
-      "automergeStrategy": "squash"
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "all non-major dependencies",
+      "automerge": true
     }
-  ],
-  "timezone": "UTC"
+  ]
 }

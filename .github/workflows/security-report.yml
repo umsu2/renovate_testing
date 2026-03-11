@@ -1,0 +1,35 @@
+name: Security Report
+
+on:
+  schedule:
+    - cron: '0 9 * * 1' # Every Monday at 9AM
+  workflow_dispatch: # Allows you to manually trigger the workflow right now!
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+    - uses: actions/checkout@v6
+
+    - name: Build image for scanning
+      run: docker build -t my-app:latest .
+
+    - name: Run Trivy vulnerability scanner and generate HTML
+      uses: aquasecurity/trivy-action@0.24.0
+      with:
+        image-ref: 'my-app:latest'
+        format: 'template'
+        template: '@/contrib/html.tpl'
+        output: 'trivy-report.html'
+        severity: 'CRITICAL,HIGH'
+        ignore-unfixed: true
+        vuln-type: 'os,library'
+
+    - name: Upload HTML Report as Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: trivy-security-report
+        path: trivy-report.html
+        retention-days: 14

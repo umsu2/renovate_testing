@@ -4,5 +4,5 @@ go 1.26.0
 
 require (
 	github.com/shopspring/decimal v1.5.0
-	golang.org/x/net v0.59.0
+	golang.org/x/net v0.60.0
 )
